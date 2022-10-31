@@ -1,3 +1,8 @@
 h1 {
     color: red;
 }
+
+app-parent {
+	display: block;
+	border: 10px solid red;
+}
