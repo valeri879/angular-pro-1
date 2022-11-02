@@ -1,1 +1,21 @@
-<h1>hello world {{title}}</h1>
+
+<div *ngIf="isActive">is active</div>
+
+<div [ngClass]="isActive ? 'active' : ''">This div is active</div>
+
+<div [ngStyle]="{ 'color': 'red' }">This div is NgStyle example</div>
+
+<ul>
+    <ng-container *ngFor="let user of users">
+        <li *ngIf="user.gender == 'male'">
+            <span>{{user.firstName}}</span>
+        </li>
+    </ng-container>
+</ul>
+
+
+<ul>
+    <li *ngFor="let user of users" >
+        <span *ngIf="user.gender == 'male'">{{user.firstName}}</span>
+    </li>
+</ul>
