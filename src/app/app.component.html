@@ -1,1 +1,10 @@
-<h1>hello world {{title}}</h1>
+<h1 appTestDirective color="red">hello world {{title}}</h1>
+
+<p appTestDirective [color]="color">
+   Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, voluptatum? 
+</p>
+
+<ul>
+    <li>list 1</li>
+    <li appTestDirective [color]="'brown'">list 2</li>
+</ul>
