@@ -1,1 +1,16 @@
-<h1>hello world {{title}}</h1>
+<app-card>
+    <h1>Heading from parent component</h1>
+    <p question>Hello from parent component</p>
+</app-card>
+
+<input #userInput type="text">
+<button (click)="logValue(userInput)">log input value</button>
+<div *ngIf="isActive; else isNotActive">I'm active div</div>
+
+<h2 [class.active]="isActive">active</h2>
+
+<button (click)="toggle()">toggle</button>
+
+<ng-template #isNotActive>
+    <div>I'm not active</div>
+</ng-template>

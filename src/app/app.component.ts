@@ -8,4 +8,14 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
   title = 'angular-pro-1';
+
+  isActive: boolean = true;
+
+  logValue(el: HTMLInputElement) {
+  }
+
+  toggle() {
+    this.isActive = !this.isActive;
+  }
+  
 }

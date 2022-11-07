@@ -1,3 +1,13 @@
 h1 {
     color: red;
 }
+
+h2.active {
+    color: red;
+    text-decoration: underline;
+}
+
+app-card {
+    display: block;
+    border: 10px solid red;
+}
