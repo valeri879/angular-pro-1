@@ -1,1 +1,4 @@
-<h1>hello world {{title}}</h1>
+<ng-container *ngFor="let item of data; let i = index">
+    <h1 (click)="toggle(i)">{{item.title}}</h1>
+    <p [class.active]="show[i]">{{item.descr}}</p>
+</ng-container>

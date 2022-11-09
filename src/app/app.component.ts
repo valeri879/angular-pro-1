@@ -7,5 +7,24 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
-  title = 'angular-pro-1';
+
+  show: boolean[] = [];
+
+  data: { title: string, descr: string }[] = [
+    { title: 'title 1', descr: 'descr 1' },
+    { title: 'title 2', descr: 'descr 2' },
+    { title: 'title 3', descr: 'descr 3' },
+    { title: 'title 4', descr: 'descr 4' },
+  ]
+
+  constructor() {}
+
+  public toggle(i: number): void {
+    for (let j = 0; j < this.show.length; j++) {
+      if (i != j) {
+        this.show[j] = false;
+      }
+    }
+    this.show[i] = !this.show[i];
+  }
 }
