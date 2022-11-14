@@ -1,0 +1,12 @@
+<a routerLink="/product-list" [queryParams]="{
+    byName: 1,
+    byTitle: 1,
+    byDescr: 1
+}">filter by</a>
+
+<div class="list">
+    <a routerLink="/product-detail/{{product.id}}" class="card" *ngFor="let product of products">
+        <span>{{product.title}}</span>
+        <p>{{product.descr}}</p>
+    </a>
+</div>

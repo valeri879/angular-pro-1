@@ -1,3 +1,12 @@
 h1 {
     color: red;
 }
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    background: wheat;
+    gap: 0 15px;
+}
