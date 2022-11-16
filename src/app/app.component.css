@@ -10,3 +10,15 @@ nav {
     background: wheat;
     gap: 0 15px;
 }
+
+nav a {
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+nav a.active {
+    font-weight: bold;
+    background-color: black;
+    color: white;
+}

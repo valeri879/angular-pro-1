@@ -8,6 +8,9 @@ import { ContactComponent } from './contact/contact.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { AdminComponent } from './admin/admin.component';
+import { UsersComponent } from './admin/users/users.component';
+import { DataComponent } from './admin/data/data.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
     ContactComponent,
     NotFoundComponent,
     ProductListComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    AdminComponent,
+    UsersComponent,
+    DataComponent
   ],
   imports: [
     BrowserModule,
