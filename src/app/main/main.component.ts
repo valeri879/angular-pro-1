@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-main',
@@ -9,11 +8,9 @@ import { ActivatedRoute } from '@angular/router';
 export class MainComponent implements OnInit {
 
   constructor(
-    private _route: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
-   console.log(this._route.snapshot.data);
   }
 
 }

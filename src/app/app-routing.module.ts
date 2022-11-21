@@ -20,9 +20,16 @@ const routes: Routes = [
       { path: 'data', component: DataComponent, title: 'Admin data' },
     ]
   },
-  { path: 'contact', component: ContactComponent, title: 'Contact' },
-  { path: 'product-list', component: ProductListComponent, title: 'Product list' },
-  { path: 'product-detail/:id', component: ProductDetailComponent, title: 'Product detail' },
+  {
+    path: 'contact', 
+    loadChildren: () => import('./modules/contact/contact.module').then(m => m.ContactModule),
+    title: 'Contact' 
+  },
+  {
+    path: 'product', 
+    loadChildren: () => import('./modules/product/product.module').then(m => m.ProductModule),
+    title: 'Product list'
+  },
   { path: '**', component: NotFoundComponent }
 ];
 
