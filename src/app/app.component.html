@@ -1,1 +1,56 @@
 <h1>hello world {{title}}</h1>
+<div class="container">
+    <form [formGroup]="form">
+        <!-- ელფოსტა -->
+        <div>
+            <mat-form-field appearance="outline">
+                <mat-label>ელფოსტა</mat-label>
+                <input formControlName="email" type="email" matInput>
+            </mat-form-field>
+            <!-- {{email.invalid}} -->
+            <!-- {{email.valid}} -->
+        </div>
+        <!-- პაროლი -->
+        <div>
+            <mat-form-field  appearance="outline">
+                <mat-label>პაროლი</mat-label>
+                <input formControlName="password" type="text" matInput>
+            </mat-form-field> 
+        </div>
+        <!-- გაიმეორე პაროლი -->
+        <div>
+            <mat-form-field  appearance="outline">
+                <mat-label>გაიმეორე პაროლი</mat-label>
+                <input formControlName="rePassword" type="text" matInput>
+            </mat-form-field> 
+        </div>
+
+        <!-- დინამიური ფორმა -->
+        <div formArrayName="address">
+            <div *ngFor="let control of address.controls; let i = index">
+                <div [formGroupName]="i">
+                    <div>
+                        <mat-form-field  appearance="outline">
+                            <mat-label>ქვეყანა</mat-label>
+                            <input formControlName="country" type="text" matInput>
+                        </mat-form-field> 
+                    </div>
+                    <div>
+                        <mat-form-field  appearance="outline">
+                            <mat-label>ქალაქი</mat-label>
+                            <input formControlName="city" type="text" matInput>
+                        </mat-form-field> 
+                    </div> 
+                </div>
+            </div>
+        </div>
+
+        <button (click)="addAddress()" mat-raised-button>ლოკაციის დამატება</button>
+
+<!--         <div *ngIf="form.controls['password'].value != form.controls['rePassword'].value">
+            პაროლები არ უდრის ერთმანეთს
+        </div> -->
+        
+        <button (click)="submit()" mat-raised-button color="primary">შესვლა</button>
+    </form>
+</div>
