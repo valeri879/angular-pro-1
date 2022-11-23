@@ -8,6 +8,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { AdminComponent } from './admin/admin.component';
 import { UsersComponent } from './admin/users/users.component';
 import { DataComponent } from './admin/data/data.component';
+import { HttpClientModule } from '@angular/common/http';
 
 console.log('root module loaded...');
 
@@ -21,6 +22,7 @@ console.log('root module loaded...');
     DataComponent,
   ],
   imports: [
+		HttpClientModule,
     BrowserModule,
     AppRoutingModule
   ],
