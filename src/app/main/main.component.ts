@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import {Observable, Subscription} from 'rxjs';
 import { Main, MainService } from '../services/main.service';
 
 @Component({
@@ -6,24 +7,19 @@ import { Main, MainService } from '../services/main.service';
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css']
 })
-export class MainComponent implements OnInit {
+export class MainComponent implements OnInit, OnDestroy {
 
-	public mainPageData!: Main;
-
+	public data$!: Observable<Main>;
+	
   constructor(
 		private _mainService: MainService
   ) { }
 
   ngOnInit(): void {
-		this._mainService.getMain().subscribe(
-			res => {
-				this.mainPageData = res;
-				console.log(res);
-			},
-			error => {
-				console.log(error);
-			}
-		)
+		this.data$ = this._mainService.getMain();
   }
+
+	ngOnDestroy(): void {
+	}
 
 }
