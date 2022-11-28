@@ -1,6 +1,6 @@
 import {HttpClient} from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import {Observable} from 'rxjs';
+import {delay, map, Observable, tap} from 'rxjs';
 
 export interface Main {
  title: string;
@@ -18,6 +18,24 @@ export class MainService {
 	) { }
 
 	getMain(): Observable<Main> {
-		return this._http.get<Main>('assets/main.json');
+		return this._http.get<Main>('assets/main.json').pipe(
+			delay(2000),
+			tap(
+				(res: any) => {
+					console.log('this is first tap operator', res)
+				}
+			),
+			map(
+				(result: any) => {
+					console.log('this is map operator', result['data']);
+					return result['data'];
+				}
+			),
+			tap(
+				(res: any) => {
+					console.log('this is tap after map operator', res)
+				}
+			)
+		);
 	}
 }

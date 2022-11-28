@@ -9,6 +9,7 @@ import { AdminComponent } from './admin/admin.component';
 import { UsersComponent } from './admin/users/users.component';
 import { DataComponent } from './admin/data/data.component';
 import { HttpClientModule } from '@angular/common/http';
+import {ReactiveFormsModule} from '@angular/forms';
 
 console.log('root module loaded...');
 
@@ -22,6 +23,7 @@ console.log('root module loaded...');
     DataComponent,
   ],
   imports: [
+		ReactiveFormsModule,
 		HttpClientModule,
     BrowserModule,
     AppRoutingModule
