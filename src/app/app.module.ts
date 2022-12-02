@@ -10,6 +10,8 @@ import { UsersComponent } from './admin/users/users.component';
 import { DataComponent } from './admin/data/data.component';
 import { HttpClientModule } from '@angular/common/http';
 import {ReactiveFormsModule} from '@angular/forms';
+import { BlogListComponent } from './blog-list/blog-list.component';
+import { BlogDetailComponent } from './blog-detail/blog-detail.component';
 
 console.log('root module loaded...');
 
@@ -21,6 +23,8 @@ console.log('root module loaded...');
     AdminComponent,
     UsersComponent,
     DataComponent,
+    BlogListComponent,
+    BlogDetailComponent,
   ],
   imports: [
 		ReactiveFormsModule,
