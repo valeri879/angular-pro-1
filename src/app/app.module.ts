@@ -12,6 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
 import {ReactiveFormsModule} from '@angular/forms';
 import { BlogListComponent } from './blog-list/blog-list.component';
 import { BlogDetailComponent } from './blog-detail/blog-detail.component';
+import { LoginComponent } from './login/login.component';
+import { ProfileComponent } from './profile/profile.component';
 
 console.log('root module loaded...');
 
@@ -25,6 +27,8 @@ console.log('root module loaded...');
     DataComponent,
     BlogListComponent,
     BlogDetailComponent,
+    LoginComponent,
+    ProfileComponent,
   ],
   imports: [
 		ReactiveFormsModule,
