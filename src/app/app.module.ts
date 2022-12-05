@@ -8,12 +8,13 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { AdminComponent } from './admin/admin.component';
 import { UsersComponent } from './admin/users/users.component';
 import { DataComponent } from './admin/data/data.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import {ReactiveFormsModule} from '@angular/forms';
 import { BlogListComponent } from './blog-list/blog-list.component';
 import { BlogDetailComponent } from './blog-detail/blog-detail.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
+import {TokenInterceptor} from './interceptors/token.interceptor';
 
 console.log('root module loaded...');
 
@@ -36,7 +37,13 @@ console.log('root module loaded...');
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+		{
+			provide: HTTP_INTERCEPTORS,
+			useClass: TokenInterceptor,
+			multi: true
+		}
+	],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
