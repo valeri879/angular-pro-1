@@ -1,1 +1,5 @@
-{{ data$ | async | json }}
+<ng-container *ngIf="data$ | async as userData">
+	<div>{{userData.user.firstName}}</div>
+	<div>{{userData.user.lastName}}</div>
+</ng-container>
+

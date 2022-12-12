@@ -22,3 +22,10 @@ nav a.active {
     background-color: black;
     color: white;
 }
+
+.admin-menu {
+	padding: 15px;
+	background-color: #ccc;
+	display: flex;
+	gap: 0 15px;
+}

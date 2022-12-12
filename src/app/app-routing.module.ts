@@ -1,8 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AdminComponent } from './admin/admin.component';
-import { DataComponent } from './admin/data/data.component';
-import { UsersComponent } from './admin/users/users.component';
 import {BlogDetailComponent} from './blog-detail/blog-detail.component';
 import {BlogListComponent} from './blog-list/blog-list.component';
 import { LoginGuard } from './guards/login.guard';
@@ -17,13 +14,7 @@ const routes: Routes = [
   { path: 'main', component: MainComponent, title: 'Main'},
   { path: 'login', component: LoginComponent, title: 'Login', canActivate: [LoginGuard]},
   { path: 'profile', component: ProfileComponent, title: 'Profile' },
-  {
-    path: 'admin', component: AdminComponent, title: 'Admin',
-    children: [
-      { path: 'users', component: UsersComponent, title: 'Admin users' },
-      { path: 'data', component: DataComponent, title: 'Admin data' },
-    ]
-  },
+	{ path: 'admin', loadChildren: () => import('./modules/admin/admin.module').then(m => m.AdminModule) },
 	{ path: 'blog-list', component: BlogListComponent, title: 'All blogs' },
 	{ path: 'blog-detail/:id', component: BlogDetailComponent, title: 'Blog detail' },
   {

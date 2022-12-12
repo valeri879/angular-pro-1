@@ -9,4 +9,8 @@
   <!-- logout button -->
   <button *ngIf="loginService.isLoggedIn$ | async" (click)="loginService.logout()">logout</button>
 </nav>
+<div *ngIf="loginService.isAdmin$ | async" class="admin-menu">
+	<a routerLink="add-blog">add blog</a>
+	<a routerLink="admin/categories">categories</a>
+</div>
 <router-outlet></router-outlet>
