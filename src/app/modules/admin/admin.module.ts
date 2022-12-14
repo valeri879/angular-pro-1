@@ -3,13 +3,17 @@ import { CommonModule } from '@angular/common';
 
 import { AdminRoutingModule } from './admin-routing.module';
 import { CategoriesComponent } from '../../admin/categories/categories.component';
+import { TagsComponent } from '../../admin/tags/tags.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 
 @NgModule({
   declarations: [
-    CategoriesComponent
+    CategoriesComponent,
+    TagsComponent
   ],
   imports: [
+		ReactiveFormsModule,
     CommonModule,
     AdminRoutingModule
   ]
