@@ -15,6 +15,7 @@ import { BlogDetailComponent } from './blog-detail/blog-detail.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import {TokenInterceptor} from './interceptors/token.interceptor';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 console.log('root module loaded...');
 
@@ -35,7 +36,8 @@ console.log('root module loaded...');
 		ReactiveFormsModule,
 		HttpClientModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [
 		{
