@@ -19,4 +19,15 @@ export class CategoriesService {
 	deleteCategory(categoryId: string) {
 		return this._http.delete(`${environment.api}/api/categories/${categoryId}`)
 	}
+
+	addCategory(data: any) {
+		return this._http.post(`${environment.api}/api/categories`, data)
+	}
+
+	upload(file: File) {
+		let formData = new FormData();
+		formData.append('img', file);
+
+		return this._http.post(`${environment.api}/api/categories/upload`, formData);
+	}
 }

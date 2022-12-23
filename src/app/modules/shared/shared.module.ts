@@ -6,13 +6,15 @@ import { ConfirmationDialogComponent } from '../../dialogs/confirmation-dialog/c
 import { MatDialogModule } from '@angular/material/dialog';
 import { TagsDialogComponent } from '../../dialogs/tags-dialog/tags-dialog.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CategoriesDialogComponent } from '../../dialogs/categories-dialog/categories-dialog.component';
 
 @NgModule({
   declarations: [
     DotPipe,
     CardComponent,
     ConfirmationDialogComponent,
-    TagsDialogComponent
+    TagsDialogComponent,
+    CategoriesDialogComponent
   ],
   exports: [CardComponent, DotPipe, MatDialogModule],
   imports: [ReactiveFormsModule, MatDialogModule, CommonModule]
