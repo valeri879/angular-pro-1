@@ -14,21 +14,34 @@ export class TagsDialogComponent implements OnInit {
   constructor(
     private _tagsService: TagsService,
     public matDialogRef: MatDialogRef<TagsDialogComponent>,
-		@Inject(MAT_DIALOG_DATA) public data: any
-  ) {}
+    @Inject(MAT_DIALOG_DATA) public data: any
+  ) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log(this.data);
+    if (this.data) this.tagControl.setValue(this.data.title);
+  }
 
   submit() {
-		console.log(this.data);
-		/*
-    this._tagsService.addTag({ title: this.tagControl.value }).subscribe(
+    if (!this.data) {
+      this._tagsService.addTag({ title: this.tagControl.value }).subscribe(
+        () => {
+          this.matDialogRef.close(true);
+        },
+        err => {
+          this.matDialogRef.close();
+        }
+      );
+      return;
+    }
+    this._tagsService.editTag({ id: this.data._id, title: this.tagControl.value }).subscribe(
       () => {
         this.matDialogRef.close(true);
       },
       err => {
         this.matDialogRef.close();
       }
-    );*/
+    );
+
   }
 }
