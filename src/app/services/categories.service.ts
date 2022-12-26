@@ -24,6 +24,10 @@ export class CategoriesService {
 		return this._http.post(`${environment.api}/api/categories`, data)
 	}
 
+	editCategory(data: any) {
+		return this._http.put(`${environment.api}/api/categories`, data)
+	}
+
 	upload(file: File) {
 		let formData = new FormData();
 		formData.append('img', file);

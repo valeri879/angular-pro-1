@@ -27,10 +27,10 @@ export class CategoriesComponent implements OnInit {
 		this.categories$ = this._categoriesService.getAllCategory();
 	}
 
-	addCategory() {
+	addCategory(cat?: any) {
 		const dialog = this._matDialog.open(CategoriesDialogComponent, {
-			width: '440px'
-			
+			width: '440px',
+			data: cat
 		})
 	}
 	

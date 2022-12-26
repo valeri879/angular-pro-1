@@ -20,5 +20,8 @@
   <div>
     <input formControlName="isFavorite" placeholder="isFavorite" type="checkbox" />
   </div>
-  <button (click)="submit()">add</button>
+  <div style="background-color: #ccc;" *ngIf="data">
+    <img *ngIf="data.img" [src]="data.img" width="100px" height="60px" alt="category image">
+  </div>
+  <button (click)="submit()">{{ data ? 'edit' : 'add' }}</button>
 </form>

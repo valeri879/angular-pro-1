@@ -18,7 +18,6 @@ export class TagsDialogComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    console.log(this.data);
     if (this.data) this.tagControl.setValue(this.data.title);
   }
 
