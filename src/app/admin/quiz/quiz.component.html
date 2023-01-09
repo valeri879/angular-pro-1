@@ -1,0 +1,16 @@
+<form [formGroup]="form" class="container">
+	<h1>add quiz</h1>
+
+	<div>
+		<input type="text" placeholder="title">
+	</div>
+	<div>
+		<input type="text" placeholder="small descr">
+	</div>
+	<div>
+		<textarea type="text" placeholder="description"></textarea>
+	</div>
+
+	<button (click)="addAnswersDialog()">add question</button>
+
+</form>

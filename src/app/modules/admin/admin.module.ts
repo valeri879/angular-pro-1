@@ -6,12 +6,16 @@ import { CategoriesComponent } from '../../admin/categories/categories.component
 import { TagsComponent } from '../../admin/tags/tags.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {SharedModule} from '../shared/shared.module';
+import { QuizComponent } from '../../admin/quiz/quiz.component';
+import { QuizAddEditDialogComponent } from '../../admin/quiz/quiz-add-edit-dialog/quiz-add-edit-dialog.component';
 
 
 @NgModule({
   declarations: [
     CategoriesComponent,
-    TagsComponent
+    TagsComponent,
+    QuizComponent,
+    QuizAddEditDialogComponent
   ],
   imports: [
 		ReactiveFormsModule,
